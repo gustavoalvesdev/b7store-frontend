@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { HeaderIcon } from "./header-icon";
+import Link from "next/link";
 
 export function Header() {
     return (
@@ -9,15 +11,23 @@ export function Header() {
             <div className="w-full max-w-6xl mx-auto p-6">
                 <div className="flex items-center justify-between">
                     <div>
-                        <Image 
+                        <Image
                             src="/assets/ui/logo-black.png" 
                             alt="B7Store"
                             width={120}
                             height={40}
                         />                  
                     </div>
-                    <div className="">
-                        Botões
+                    <div className="flex gap-4">
+                        <Link href={'/my-orders'}>
+                            <HeaderIcon src="/assets/ui/user-line.png" alt="Perfil" />
+                        </Link>
+                        <Link href={'/cart'}>
+                            <HeaderIcon src="/assets/ui/shopping-bag-4-line.png" alt="Carrinho" />
+                        </Link>
+                        <div className="md:hidden">
+                            <HeaderIcon src="/assets/ui/menu-line.png" alt="Menu" />
+                        </div>
                     </div>
                 </div>
             </div>
